@@ -50,6 +50,9 @@ export class TherapistsComponent implements OnInit{
         var _therapist = {
             _id:therapist._id,
             name: therapist.name
+            password: therapist.password,
+            hobby: therapist.hobby,
+            age: therapist.age
         };
 
         this.therapistService.updateStatus(_therapist).subscribe(data => {});

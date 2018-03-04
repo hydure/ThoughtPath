@@ -22,13 +22,19 @@ export class ClientsComponent implements OnInit{
     addClient(event){
         event.preventDefault();
         var newClient = {
-            name:this.name
+            name:this.name,
+            password: this.password,
+            hobby: this.hobby,
+            age: this.age
         }
 
         this.clientService.addClient(newClient)
             .subscribe(client=>{
                 this.clients.push(client);
-                this.name= '';
+                this.name = '';
+                this.password = '';
+                this.hobby = '';
+                this.age = '';
             });
     }
 
@@ -48,7 +54,10 @@ export class ClientsComponent implements OnInit{
     updateStatus(client){
         var _client = {
             _id:client._id,
-            name: client.name
+            name: client.name,
+            password: client.password,
+            hobby: client.hobby,
+            age: client.age
         };
 
         this.clientService.updateStatus(_client).subscribe(data => {});
