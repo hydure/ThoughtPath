@@ -17,7 +17,7 @@ Next `cd thoughtpath` and then type `npm install` to install the first set of de
 Then `cd client` and again type `npm install` to install the second and final set of depencies.
 Now type `npm start` and then stop the server.
 After stopping the server, type `cd ..`.
-Input `bower install bootstrap -g --save` on the command line.
+Input `bower install bootstrap` on the command line.
 Finally type `nodemon` to run the server on `localhost:3000`.
 
 ## Configuration
