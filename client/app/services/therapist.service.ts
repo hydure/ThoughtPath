@@ -12,4 +12,11 @@ export class TherapistService {
         return this.http.get('http://localhost:3000/api/therapists')
         .map(res => res.json());
     }
+
+    addTherapists(newTherapist){
+        var headers = new Headers();
+        headers.append('Content-Type', 'application/json');
+        return this.http.post('/api/therapist', JSON.stringify(newTherapist), {headers: headers})
+            .map(res => res.json());
+    }
 }
