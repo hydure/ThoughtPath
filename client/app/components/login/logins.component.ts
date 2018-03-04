@@ -3,28 +3,25 @@ import { Login } from '../../../Login';
 @Component({
     moduleId: module.id,
     selector: 'logins',
-    templateUrl: 'login.component.html'
+    templateUrl: 'logins.component.html'
 })
 
 export class LoginComponent implements OnInit{
     login: Login[];
-
+    username: string;
+    password: string;
     ngOnInit(){
        
     };
-    constructor(private clientService:ClientService){}
+    constructor(){}
 
-    addClient(event){
+    requestLogin(event){
         event.preventDefault();
-        var newClient = {
-            name:this.name
+        var login = {
+            username:this.username,
+            password: this.password
         }
 
-        this.clientService.addClient(newClient)
-            .subscribe(client=>{
-                this.clients.push(client);
-                this.name= '';
-            });
     }
 
 }

@@ -1,6 +1,11 @@
-<form class="well" (submit)="addClient($event)">
+Log-in
+
+
+<form class="well" (submit)="requestLogin($event)">
     <div class="form-group">
         <input type="text" [(ngModel)]="username" name="username" class="form-control" placeholder="Username">
-        <input type="text" [(ngModel)]="password" name="password" class="form-control" placeholder="Add Client">
+        <input type="text" [(ngModel)]="password" name="password" class="form-control" placeholder="Password">
     </div>
+
+    <button (click)="requestLogin($event)">Log-in</button>
 </form>
