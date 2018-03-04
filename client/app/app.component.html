@@ -209,7 +209,7 @@
 
 
 <!-- The overlay -->
-<section class="hero is-primary is-medium">
+<section class="hero is-primary is-medium is-fullheight">
   <!-- Hero head: will stick at the top -->
   <div class="hero-head">
     <nav class="navbar">
@@ -232,9 +232,6 @@
             <a class="navbar-item">
               <p onclick="openNav()">Therapist Login</p>
             </a>
-            <a class="navbar-item">
-              Documentation
-            </a>
           </div>
         </div>
       </div>
@@ -242,14 +239,22 @@
   </div>
 
   <!-- Hero content: will be in the middle -->
-  <div class="hero-body">
+  <div class="hero-body ">
     <div class="container has-text-centered">
       <h1 class="title">
-        ThoughtPath
+       Your first steps toward finding the right help
       </h1>
+      
       <h2 class="subtitle">
-        <i>Your first steps toward finding the right help</i>
+        <i>Twenty percent of patients leave therapy too early.<br>Let us help you receive the right care at the right time.</i>
       </h2>
+      
+      <div *ngIf="displayId == -1 || displayId == null">
+        <div  class="findTherapist">
+          <a class="button is-primary is-inverted" (click)="displayId = 4">Find therapists for me</a>
+        </div>
+      </div>
+      
     </div>
   </div>
 
@@ -258,12 +263,8 @@
     <nav class="tabs">
       <div class="container">
         <ul>
-          <li class="is-active"><a>Overview</a></li>
-          <li><a>Modifiers</a></li>
-          <li><a>Grid</a></li>
-          <li><a>Elements</a></li>
-          <li><a>Components</a></li>
-          <li><a>Layout</a></li>
+          <li class="is-active"><a>Show therapists</a></li>
+          <li><a>Show clients</a></li>
         </ul>
       </div>
     </nav>
@@ -277,23 +278,6 @@
 
 </ul>
 
-
-
-<div *ngIf="displayId == -1 || displayId == null" class="container">
-    <div  class="findTherapist">
-        <button type="button" class="btn btn-primary" (click)="displayId = 4"><h4>Start My Therapist Match</h4></button>
-    </div>
-    <!--<div class="goals">
-        <div class="centerNum numberCircle">1</div>
-        <br>
-        <div class="centerNum numberCircle">2</div>
-        <br>
-        <div class="centerNum numberCircle">3</div>
-    </div>-->
-    <div class="numbers">
-        <p>There are a ton of clients and therapists signed up!</p>
-    </div>
-</div>
 <div *ngIf="displayId==4">
     <clientform></clientform>
 </div>
