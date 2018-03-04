@@ -1,8 +1,15 @@
- <div class="container">
-    <h1>My Therapists</h1>
-    <hr>
-    <therapists></therapists>
-    <hr>
-    <h2>My Clients</h2>
-    <clients></clients>
+<button (click)="showTherapists = !showTherapists">Switch mode</button>
+<div *ngIf="showTherapists">
+    <div class="container">
+            <h1>My Therapists</h1>
+                <hr>
+                    <therapists></therapists>
 </div>
+</div>
+<div *ngIf!="showTherapists">
+        <div class="container">
+                <h1>My Clients</h1>
+                    <hr>
+                        <clients></clients>
+        </div>
+    </div>
