@@ -13,6 +13,7 @@ export class ClientsComponent implements OnInit{
     password: string;
     age: string;
     hobby: string;
+    best_therapist: string;
 
     ngOnInit(){
         this.clientService.getClients()
@@ -52,6 +53,11 @@ export class ClientsComponent implements OnInit{
                 }
             }
         });
+    }
+
+    generateTherapist(id){
+        var therapistPerson = this.clientService.generateTherapist(id);
+        return therapistPerson;
     }
 
     updateStatus(client){

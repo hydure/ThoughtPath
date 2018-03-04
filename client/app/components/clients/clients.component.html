@@ -14,7 +14,12 @@
         </div>
         <div class="col-md-10">
             <input type="button" (click)="deleteClient(client._id)" value="Delete" class="btn btn-danger">
+            <input type="button" (click)="generateTherapist(client._id)" value="Find therapists" class="btn btn-danger">    
         </div>
         <br><br>
     </div>
+</div>
+
+<div ng-if="best_therapist">
+    <p>{{best_therapist}}</p>
 </div>
