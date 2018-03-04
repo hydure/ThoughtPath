@@ -6,7 +6,7 @@
 
 
 <form class="well" (submit)="generateTherapists($event)">
-    <div style="width: 50%; padding: 10px;;" class="form-group">
+    <div style="width: 50%; padding: 10px;;" class="container form-group">
         <input type="text" [(ngModel)]="clientname" name="clientname" class="form-control" placeholder="Your name">
         <input type="text" [(ngModel)]="age" name="age" class="form-control" placeholder="Your age">
         <input type="text" [(ngModel)]="location" name="location" class="form-control" placeholder="location">
@@ -20,12 +20,12 @@
 
 
 <div *ngIf="therapist_result">
-    You have matched with: {{therapist_result.name}}
-    They are: {{therapist_result.age}}
-    Living in: {{therapist_result.location}}
-    Specializes in: {{therapist_result.specializations}}
-    Likes: {{therapist_result.hobby}}
-    Finds themselves to be: {{therapist_result.personality}}
+    You have matched with: {{therapist_result.name}}<br>
+    They are: {{therapist_result.age}}<br>
+    Living in: {{therapist_result.location}}<br>
+    Specializes in: {{therapist_result.specializations}}<br>
+    Likes: {{therapist_result.hobby}}<br>
+    Finds themselves to be: {{therapist_result.personality}}<br>
     Accepts: {{therapist_result.insurances}}
 
 </div>
