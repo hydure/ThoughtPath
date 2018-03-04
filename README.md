@@ -12,13 +12,13 @@ Research has shown many therapist-client relationships fail due to personality c
 * Install an IDE, such as [VS Code](https://code.visualstudio.com/download).
 
 ### Installing
-First clone the repo by typing in 'git clone https://github.com/hydure/thoughtpath'.
+First clone the repo by typing in  `git clone https://github.com/hydure/thoughtpath`.
 
-Next 'cd thoughtpath' and then type 'npm install' to install the first set of dependencies.
-Then 'cd client' and again type 'npm install' to install the second and final set of depencies.
-Now type 'npm start' and then stop the server.
-After stopping the server, type 'cd ..'.
-Finally type 'nodemon' to run the server on 'localhost:3000'.
+Next `cd thoughtpath` and then type `npm install` to install the first set of dependencies.
+Then `cd client` and again type `npm install` to install the second and final set of depencies.
+Now type `npm start` and then stop the server.
+After stopping the server, type `cd ..`.
+Finally type `nodemon` to run the server on `localhost:3000`.
 
 ## Configuration
 - **Platform:** node.js
@@ -30,8 +30,14 @@ Finally type 'nodemon' to run the server on 'localhost:3000'.
 ## Authors
 See the lists of [contributors](https://github.com/hydure/ThoughtPath/graphs/contributors) who participated in this project.
 
+### Contributing
+Please read [CONTRIBUTING.md](https://github.com/hydure/ThoughtPath/blob/master/CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
+
 ## Acknowledgements
-Thanks to Victor at Disrupt the District 2018 for helping us ensure the backend worked properly by teaching us how to use Postman, and also for helping us fix minor connection issues.
+A special thanks to Victor at Disrupt the District 2018 for helping us ensure the backend worked properly by teaching us how to use Postman, and also for helping us fix minor connection issues.
+
+Thank you to [Traversy Media](https://www.youtube.com/channel/UC29ju8bIPH5as8OGnQzwJyA) for creating helpful tutorials, like [the one we used](https://www.youtube.com/watch?v=PFP0oXNNveg).
+
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
