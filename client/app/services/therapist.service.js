@@ -15,7 +15,7 @@ require("rxjs/add/operator/map");
 var TherapistService = (function () {
     function TherapistService(http) {
         this.http = http;
-        console.log('Task Service Initialized...');
+        console.log('Therapist Service Initialized...');
     }
     TherapistService.prototype.getTherapists = function () {
         return this.http.get('/api/therapists')

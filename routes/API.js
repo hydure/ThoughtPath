@@ -170,7 +170,7 @@ router.post('/clients', function(req, res, next){
 });
 
 // Delete client
-router.delete('/client/:id', function(req, res, next) {
+router.delete('/clients/:id', function(req, res, next) {
 
     // try and get specific therapist documents
     db.clients.remove({_id: mongojs.ObjectId(req.params.id)}, function(err, client) {
@@ -183,7 +183,7 @@ router.delete('/client/:id', function(req, res, next) {
 });
 
 // Update client data
-router.put('/client/:id', function(req, res, next) {
+router.put('/clients/:id', function(req, res, next) {
     // Get information from the form
     var client = req.body;
     var updateClient = {};

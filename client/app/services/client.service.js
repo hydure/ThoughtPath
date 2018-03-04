@@ -15,7 +15,7 @@ require("rxjs/add/operator/map");
 var ClientService = (function () {
     function ClientService(http) {
         this.http = http;
-        console.log('Task Service Initialized...');
+        console.log('Client Service Initialized...');
     }
     ClientService.prototype.getClients = function () {
         return this.http.get('/api/clients')
