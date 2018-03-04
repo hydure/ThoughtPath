@@ -1,3 +1,7 @@
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
 <style>
     html {
         position: relative;
@@ -186,7 +190,6 @@
     }
 </style>
 
-
 <div id="myNav" class="overlay">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
     <div class="overlay-content">
@@ -206,7 +209,66 @@
 
 
 <!-- The overlay -->
+<section class="hero is-primary is-medium">
+  <!-- Hero head: will stick at the top -->
+  <div class="hero-head">
+    <nav class="navbar">
+      <div class="container">
+        <div class="navbar-brand">
+          <a class="navbar-item">
+            ThoughtPath
+          </a>
+          <span class="navbar-burger burger" data-target="navbarMenuHeroA">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+        </div>
+        <div id="navbarMenuHeroA" class="navbar-menu">
+          <div class="navbar-end">
+            <a class="navbar-item is-active" href=".">
+              Home
+            </a>
+            <a class="navbar-item">
+              <p onclick="openNav()">Therapist Login</p>
+            </a>
+            <a class="navbar-item">
+              Documentation
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div>
 
+  <!-- Hero content: will be in the middle -->
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <h1 class="title">
+        ThoughtPath
+      </h1>
+      <h2 class="subtitle">
+        <i>Your first steps toward finding the right help</i>
+      </h2>
+    </div>
+  </div>
+
+  <!-- Hero footer: will stick at the bottom -->
+  <div class="hero-foot">
+    <nav class="tabs">
+      <div class="container">
+        <ul>
+          <li class="is-active"><a>Overview</a></li>
+          <li><a>Modifiers</a></li>
+          <li><a>Grid</a></li>
+          <li><a>Elements</a></li>
+          <li><a>Components</a></li>
+          <li><a>Layout</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</section>
 
 <ul class="nav nav-tabs">
 
@@ -216,14 +278,9 @@
 </ul>
 
 
-<p class="text-right" onclick="openNav()">Sign me in, I'm a therapist</p>
-
 
 <div *ngIf="displayId == -1 || displayId == null" class="container">
     <div  class="findTherapist">
-        <br><br>
-        <h3 class="findWord horCenter verCenter">Find the Right Therapist</h3>
-        <br><br><br>
         <button type="button" class="btn btn-primary" (click)="displayId = 4"><h4>Start My Therapist Match</h4></button>
     </div>
     <!--<div class="goals">
@@ -256,4 +313,6 @@
                         <clients></clients>
         </div>
 </div>
+
+
 

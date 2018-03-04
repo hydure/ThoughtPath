@@ -11,7 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var therapist_service_1 = require("../../services/therapist.service");
-var TherapistsComponent = (function () {
+var TherapistsComponent = /** @class */ (function () {
     function TherapistsComponent(therapistService) {
         this.therapistService = therapistService;
     }
@@ -63,17 +63,17 @@ var TherapistsComponent = (function () {
         };
         this.therapistService.updateStatus(_therapist).subscribe(function (data) { });
     };
+    TherapistsComponent = __decorate([
+        core_1.Component({
+            moduleId: module.id,
+            selector: 'therapists',
+            templateUrl: 'therapists.component.html'
+        })
+        // Gives us access to the Therapists in the html file
+        ,
+        __metadata("design:paramtypes", [therapist_service_1.TherapistService])
+    ], TherapistsComponent);
     return TherapistsComponent;
 }());
-TherapistsComponent = __decorate([
-    core_1.Component({
-        moduleId: module.id,
-        selector: 'therapists',
-        templateUrl: 'therapists.component.html'
-    })
-    // Gives us access to the Therapists in the html file
-    ,
-    __metadata("design:paramtypes", [therapist_service_1.TherapistService])
-], TherapistsComponent);
 exports.TherapistsComponent = TherapistsComponent;
 //# sourceMappingURL=therapists.component.js.map

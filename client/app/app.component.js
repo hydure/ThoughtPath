@@ -9,18 +9,18 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var therapist_service_1 = require("./services/therapist.service");
 var client_service_1 = require("./services/client.service");
-var AppComponent = (function () {
+var AppComponent = /** @class */ (function () {
     function AppComponent() {
     }
+    AppComponent = __decorate([
+        core_1.Component({
+            moduleId: module.id,
+            selector: 'my-app',
+            templateUrl: 'app.component.html',
+            providers: [therapist_service_1.TherapistService, client_service_1.ClientService]
+        })
+    ], AppComponent);
     return AppComponent;
 }());
-AppComponent = __decorate([
-    core_1.Component({
-        moduleId: module.id,
-        selector: 'my-app',
-        templateUrl: 'app.component.html',
-        providers: [therapist_service_1.TherapistService, client_service_1.ClientService]
-    })
-], AppComponent);
 exports.AppComponent = AppComponent;
 //# sourceMappingURL=app.component.js.map

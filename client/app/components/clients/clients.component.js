@@ -11,7 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var client_service_1 = require("../../services/client.service");
-var ClientsComponent = (function () {
+var ClientsComponent = /** @class */ (function () {
     function ClientsComponent(clientService) {
         this.clientService = clientService;
     }
@@ -63,15 +63,15 @@ var ClientsComponent = (function () {
         };
         this.clientService.updateStatus(_client).subscribe(function (data) { });
     };
+    ClientsComponent = __decorate([
+        core_1.Component({
+            moduleId: module.id,
+            selector: 'clients',
+            templateUrl: 'clients.component.html'
+        }),
+        __metadata("design:paramtypes", [client_service_1.ClientService])
+    ], ClientsComponent);
     return ClientsComponent;
 }());
-ClientsComponent = __decorate([
-    core_1.Component({
-        moduleId: module.id,
-        selector: 'clients',
-        templateUrl: 'clients.component.html'
-    }),
-    __metadata("design:paramtypes", [client_service_1.ClientService])
-], ClientsComponent);
 exports.ClientsComponent = ClientsComponent;
 //# sourceMappingURL=clients.component.js.map

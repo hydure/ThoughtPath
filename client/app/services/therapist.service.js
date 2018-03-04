@@ -12,7 +12,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var http_1 = require("@angular/http");
 require("rxjs/add/operator/map");
-var TherapistService = (function () {
+var TherapistService = /** @class */ (function () {
     function TherapistService(http) {
         this.http = http;
         console.log('Therapist Service Initialized...');
@@ -37,11 +37,11 @@ var TherapistService = (function () {
         return this.http.put('/api/therapists/' + therapist._id, JSON.stringify(therapist), { headers: headers })
             .map(function (res) { return res.json(); });
     };
+    TherapistService = __decorate([
+        core_1.Injectable(),
+        __metadata("design:paramtypes", [http_1.Http])
+    ], TherapistService);
     return TherapistService;
 }());
-TherapistService = __decorate([
-    core_1.Injectable(),
-    __metadata("design:paramtypes", [http_1.Http])
-], TherapistService);
 exports.TherapistService = TherapistService;
 //# sourceMappingURL=therapist.service.js.map

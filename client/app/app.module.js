@@ -13,17 +13,19 @@ var clients_component_1 = require("./components/clients/clients.component");
 var therapists_component_1 = require("./components/therapists/therapists.component");
 var http_1 = require("@angular/http");
 var forms_1 = require("@angular/forms");
-var AppModule = (function () {
+var logins_component_1 = require("./components/login/logins.component");
+var clientform_component_1 = require("./components/clientform/clientform.component");
+var AppModule = /** @class */ (function () {
     function AppModule() {
     }
+    AppModule = __decorate([
+        core_1.NgModule({
+            imports: [platform_browser_1.BrowserModule, http_1.HttpModule, forms_1.FormsModule],
+            declarations: [app_component_1.AppComponent, therapists_component_1.TherapistsComponent, clients_component_1.ClientsComponent, logins_component_1.LoginComponent, clientform_component_1.ClientFormComponent],
+            bootstrap: [app_component_1.AppComponent]
+        })
+    ], AppModule);
     return AppModule;
 }());
-AppModule = __decorate([
-    core_1.NgModule({
-        imports: [platform_browser_1.BrowserModule, http_1.HttpModule, forms_1.FormsModule],
-        declarations: [app_component_1.AppComponent, therapists_component_1.TherapistsComponent, clients_component_1.ClientsComponent],
-        bootstrap: [app_component_1.AppComponent]
-    })
-], AppModule);
 exports.AppModule = AppModule;
 //# sourceMappingURL=app.module.js.map
