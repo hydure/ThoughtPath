@@ -7,20 +7,17 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var platform_browser_1 = require("@angular/platform-browser");
-var app_component_1 = require("./app.component");
-var therapists_component_1 = require("./components/therapists/therapists.component");
-var AppModule = (function () {
-    function AppModule() {
+var TherapistsComponent = (function () {
+    function TherapistsComponent() {
     }
-    return AppModule;
+    return TherapistsComponent;
 }());
-AppModule = __decorate([
-    core_1.NgModule({
-        imports: [platform_browser_1.BrowserModule],
-        declarations: [app_component_1.AppComponent, therapists_component_1.TherapistsComponent],
-        bootstrap: [app_component_1.AppComponent]
+TherapistsComponent = __decorate([
+    core_1.Component({
+        moduleId: module.id,
+        selector: 'therapists',
+        templateUrl: 'therapists.component.html'
     })
-], AppModule);
-exports.AppModule = AppModule;
-//# sourceMappingURL=app.module.js.map
+], TherapistsComponent);
+exports.TherapistsComponent = TherapistsComponent;
+//# sourceMappingURL=therapists.component.js.map
