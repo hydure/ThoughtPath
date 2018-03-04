@@ -10,24 +10,22 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var therapist_service_1 = require("../../services/therapist.service");
-var TherapistsComponent = (function () {
-    function TherapistsComponent(therapistService) {
-        this.therapistService = therapistService;
-        this.therapistService.getTherapists()
-            .subscribe(function (therapists) {
-            console.log(therapists);
-        });
+var http_1 = require("@angular/http");
+require("rxjs/add/operator/map");
+var TherapistService = (function () {
+    function TherapistService(http) {
+        this.http = http;
+        console.log('Task Service Initialized...');
     }
-    return TherapistsComponent;
+    TherapistService.prototype.getTherapists = function () {
+        return this.http.get('http://localhost:3000/api/therapists')
+            .map(function (res) { return res.json(); });
+    };
+    return TherapistService;
 }());
-TherapistsComponent = __decorate([
-    core_1.Component({
-        moduleId: module.id,
-        selector: 'therapists',
-        templateUrl: 'therapists.component.html'
-    }),
-    __metadata("design:paramtypes", [therapist_service_1.TherapistService])
-], TherapistsComponent);
-exports.TherapistsComponent = TherapistsComponent;
-//# sourceMappingURL=therapists.component.js.map
+TherapistService = __decorate([
+    core_1.Injectable(),
+    __metadata("design:paramtypes", [http_1.Http])
+], TherapistService);
+exports.TherapistService = TherapistService;
+//# sourceMappingURL=therapist.service.js.map
