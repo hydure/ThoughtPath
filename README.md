@@ -41,4 +41,5 @@ Thank you to [Traversy Media](https://www.youtube.com/channel/UC29ju8bIPH5as8OGn
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
-MIT © THought Path
+
+MIT © 2018 THought Path
