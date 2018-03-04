@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ClientService } from '../../services/client.service'
+import { TherapistService} from '../../services/therapist.service'
+import { Therapist } from '../../../Therapist';
+import { Client } from '../../../Client';
+
+import { Http } from '@angular/http';
 import { Client } from '../../../Client';
 @Component({
     moduleId: module.id,
@@ -9,18 +14,28 @@ import { Client } from '../../../Client';
 
 export class ClientsComponent implements OnInit{ 
     clients: Client[];
+    therapists: Therapist[];
     name: string;
     password: string;
     age: string;
     hobby: string;
+    age: string;
+    client: Client;
+    clientname: string;
+
 
     ngOnInit(){
+        this.therapistService.getTherapists()
+            .subscribe(therapists => {
+                this.therapists = therapists; });
+
+
         this.clientService.getClients()
         .subscribe(clients => {
             this.clients = clients;
         });
     };
-    constructor(private clientService:ClientService){}
+    constructor(private clientService:ClientService, private therapistService:TherapistService){}
 
     addClient(event){
         event.preventDefault();
@@ -64,5 +79,33 @@ export class ClientsComponent implements OnInit{
         };
 
         this.clientService.updateStatus(_client).subscribe(data => {});
+    }
+
+
+    generateTherapist(event){
+        event.preventDefault();
+        var therapists = this.therapists;
+        console.log(therapists);
+        var i;
+        var best = 0;
+        var bestCandidate = therapists[0];
+        //error when 1 therapist or fewer
+        for (i=0; i < therapists.length; i++){
+            var score = 0;
+            if (therapists[i].hobby != null && therapists[i].hobby == this.hobby){
+
+                score++;
+            }
+            if (therapists[i].age != null && (therapists[i].age - this.age) <= 10 && (therapists[i].age - this.age) > 0){
+
+                score++;
+            }
+            if (score > best){
+                best = score;
+                bestCandidate = therapists[i];
+            }
+        }
+        console.log(bestCandidate);
+        return bestCandidate;
     }
 }
