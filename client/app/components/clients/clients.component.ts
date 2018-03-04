@@ -5,7 +5,6 @@ import { Therapist } from '../../../Therapist';
 import { Client } from '../../../Client';
 
 import { Http } from '@angular/http';
-import { Client } from '../../../Client';
 @Component({
     moduleId: module.id,
     selector: 'clients',
@@ -19,7 +18,6 @@ export class ClientsComponent implements OnInit{
     password: string;
     age: string;
     hobby: string;
-    age: string;
     client: Client;
     clientname: string;
 
@@ -96,7 +94,7 @@ export class ClientsComponent implements OnInit{
 
                 score++;
             }
-            if (therapists[i].age != null && (therapists[i].age - this.age) <= 10 && (therapists[i].age - this.age) > 0){
+            if (therapists[i].age != null && (parseInt(therapists[i].age) - parseInt(this.age) <= 10 && (parseInt(therapists[i].age) - parseInt(this.age) > 0))){
 
                 score++;
             }
