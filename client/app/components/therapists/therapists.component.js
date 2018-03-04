@@ -14,11 +14,17 @@ var therapist_service_1 = require("../../services/therapist.service");
 var TherapistsComponent = (function () {
     function TherapistsComponent(therapistService) {
         this.therapistService = therapistService;
+    }
+    TherapistsComponent.prototype.ngOnInit = function () {
+        var _this = this;
         this.therapistService.getTherapists()
             .subscribe(function (therapists) {
-            console.log(therapists);
+            _this.therapists = therapists;
+            //console.log(therapists);
+            console.log("asdsdhfsdfds");
         });
-    }
+    };
+    ;
     return TherapistsComponent;
 }());
 TherapistsComponent = __decorate([
@@ -26,7 +32,9 @@ TherapistsComponent = __decorate([
         moduleId: module.id,
         selector: 'therapists',
         templateUrl: 'therapists.component.html'
-    }),
+    })
+    // Gives us access to the Therapists in the html file
+    ,
     __metadata("design:paramtypes", [therapist_service_1.TherapistService])
 ], TherapistsComponent);
 exports.TherapistsComponent = TherapistsComponent;
