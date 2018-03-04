@@ -1,6 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { TherapistService } from '../../services/therapist.service'
 import { Therapist } from '../../../Therapist';
+import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
+
+
+
+
 @Component({
     moduleId: module.id,
     selector: 'therapists',
@@ -66,4 +72,6 @@ export class TherapistsComponent implements OnInit{
 
         this.therapistService.updateStatus(_therapist).subscribe(data => {});
     }
+
+
 }

@@ -3,23 +3,28 @@ import { ClientService } from '../../services/client.service'
 import { TherapistService} from '../../services/therapist.service'
 import { Therapist } from '../../../Therapist';
 import { Client } from '../../../Client';
+// import { SharedService } from './../../services/shared_service/shared.service';
 
-import { Http } from '@angular/http';
-import { Client } from '../../../Client';
+
+
 @Component({
     moduleId: module.id,
     selector: 'clients',
     templateUrl: 'clients.component.html'
 })
 
-export class ClientsComponent implements OnInit{ 
+
+
+
+
+export class ClientsComponent implements OnInit{
+    therapist_result: Therapist;
     clients: Client[];
     therapists: Therapist[];
     name: string;
     password: string;
     age: string;
     hobby: string;
-    age: string;
     client: Client;
     clientname: string;
 
@@ -35,7 +40,13 @@ export class ClientsComponent implements OnInit{
             this.clients = clients;
         });
     };
-    constructor(private clientService:ClientService, private therapistService:TherapistService){}
+    constructor(private clientService:ClientService, private therapistService:TherapistService){
+
+        // this.therapistService.TherapistResault.subscribe( therapist => {
+        //     this.therapist_result = therapist;
+        // });
+        
+    }
 
     addClient(event){
         event.preventDefault();
@@ -106,6 +117,9 @@ export class ClientsComponent implements OnInit{
             }
         }
         console.log(bestCandidate);
+        this.therapist_result = bestCandidate;
+
+
         return bestCandidate;
     }
 }
