@@ -160,7 +160,7 @@ router.post('/clients', function(req, res, next){
         });
     }
     else {
-        db.tasks.save(client, function(err, client){
+        db.clients.save(client, function(err, client){
             if(err){
                 res.send(err);
             }

@@ -6,7 +6,7 @@ var path = require('path');
 var bodyParser = require('body-parser');
 
 var index = require('./routes/index');
-var tasks = require('./routes/API');
+var API = require('./routes/API');
 
 var port= 3000;
 
@@ -33,8 +33,8 @@ app.use(bodyParser.urlencoded({extended: false}));
 // Create route (homepage)
 app.use('/', index);
 
-// current task
-app.use('/api', tasks);
+// directory with functions to manipulate database
+app.use('/api', API);
 
 //listen at port #
 app.listen(port, function(){
