@@ -4,4 +4,8 @@ export class Client{
     password: string;
     hobby: string;
     age: string;
+    location: string;
+    insurance: string;
+    personality: string;
+    ailment: string;
 }

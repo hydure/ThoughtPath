@@ -27,6 +27,10 @@ export class ClientsComponent implements OnInit{
     hobby: string;
     client: Client;
     clientname: string;
+    location: string;
+    insurance: string;
+    personality: string;
+    ailment: string;
 
 
     ngOnInit(){
@@ -54,7 +58,11 @@ export class ClientsComponent implements OnInit{
             name:this.name,
             password: this.password,
             hobby: this.hobby,
-            age: this.age
+            age: this.age,
+            location: this.location,
+            insurance: this.insurance,
+            personality: this.personality,
+            ailment: this.ailment
         }
 
         this.clientService.addClient(newClient)
@@ -64,6 +72,10 @@ export class ClientsComponent implements OnInit{
                 this.password = '';
                 this.hobby = '';
                 this.age = '';
+                this.location = '';
+                this.insurance = '';
+                this.personality = '';
+                this.ailment = '';
             });
     }
 
@@ -86,7 +98,11 @@ export class ClientsComponent implements OnInit{
             name: client.name,
             password: client.password,
             hobby: client.hobby,
-            age: client.age
+            age: client.age,
+            location: client.location,
+            insurance: client.insurance,
+            personality: client.personality,
+            ailment: client.ailment
         };
 
         this.clientService.updateStatus(_client).subscribe(data => {});
@@ -107,9 +123,31 @@ export class ClientsComponent implements OnInit{
 
                 score++;
             }
-            if (therapists[i].age != null && (therapists[i].age - this.age) <= 10 && (therapists[i].age - this.age) > 0){
+            if (therapists[i].age != null && (parseInt(therapists[i].age) - parseInt(this.age) <= 10 && (parseInt(therapists[i].age) - parseInt(this.age) > 0))){
 
                 score++;
+            }
+            if (therapists[i].location != null && therapists[i].location == this.location){
+                score+=2;
+            }
+            if (therapists[i].insurances != null){
+                var j;
+                for (j = 0; j < therapists[i].insurances.length; j++){
+                    if (therapists[i].insurances[j] == this.insurance){
+                        score++;
+                    }
+                }
+            }
+            if (therapists[i].personality != null && therapists[i].personality == this.personality){
+                score++;
+            }
+            if (therapists[i].specializations != null){
+                var k;
+                for (k = 0; k < therapists[i].specializations.length; k++){
+                    if (therapists[i].specializations[k] == this.ailment){
+                        score+=3;
+                    }
+                }
             }
             if (score > best){
                 best = score;

@@ -20,6 +20,11 @@ export class TherapistsComponent implements OnInit{
     password: string;
     age: string;
     hobby: string;
+    location: string;
+    insurances: String[];
+    personality: string;
+    specializations: String[];
+    
 
     ngOnInit(){
         this.therapistService.getTherapists()
@@ -35,7 +40,11 @@ export class TherapistsComponent implements OnInit{
             name:this.name,
             password: this.password,
             hobby: this.hobby,
-            age: this.age
+            age: this.age,
+            location: this.location,
+            insurances: this.insurances,
+            personality: this.personality,
+            specializations: this.specializations
         }
 
         this.therapistService.addTherapist(newTherapist)
@@ -45,6 +54,10 @@ export class TherapistsComponent implements OnInit{
                 this.password = '';
                 this.hobby = '';
                 this.age = '';
+                this.location = '';
+                this.insurances = [];
+                this.personality = '';
+                this.specializations = [];
             });
     }
 
@@ -67,7 +80,11 @@ export class TherapistsComponent implements OnInit{
             name: therapist.name,
             password: therapist.password,
             hobby: therapist.hobby,
-            age: therapist.age
+            age: therapist.age,
+            location: therapist.location,
+            insurances: therapist.insurances,
+            personality: therapist.personality,
+            specializations: therapist.specializations
         };
 
         this.therapistService.updateStatus(_therapist).subscribe(data => {});
