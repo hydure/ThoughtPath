@@ -5,13 +5,15 @@
 </form>
 
 <div class="client-list">
-    <div class="col-md-3">
-        <input  type="checkbox">
-    </div>
-    <div class="col-md-9">
-        Client
-    </div>
-    <div class="col-md-10">
-        <input type="button" value="Delete" class="btn btn-danger">
+    <div *ngFor="let client of clients">
+        <div class="col-md-1">
+            <input  type="checkbox">
+        </div>
+        <div class="col-md-9">
+            {{client.name}}
+        </div>
+        <div class="col-md-10">
+            <input type="button" value="Delete" class="btn btn-danger">
+        </div>
     </div>
 </div>

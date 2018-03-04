@@ -14,11 +14,17 @@ var client_service_1 = require("../../services/client.service");
 var ClientsComponent = (function () {
     function ClientsComponent(clientService) {
         this.clientService = clientService;
+    }
+    ClientsComponent.prototype.ngOnInit = function () {
+        var _this = this;
         this.clientService.getClients()
             .subscribe(function (clients) {
-            console.log(clients);
+            _this.clients = clients;
+            //console.log(therapists);
+            console.log("zcvxvcxzv");
         });
-    }
+    };
+    ;
     return ClientsComponent;
 }());
 ClientsComponent = __decorate([

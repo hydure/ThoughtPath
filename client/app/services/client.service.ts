@@ -10,6 +10,6 @@ export class ClientService {
 
     getClients(){
         return this.http.get('http://localhost:3000/api/clients')
-        .map(res => res.json());
+            .map(res => res.json());
     }
 }
