@@ -4,4 +4,8 @@ export class Therapist{
     password: string;
     hobby: string;
     age: string;
+    location: string;
+    insurances: String[];
+    personality: string;
+    specializations: String[];
 }
