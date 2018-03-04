@@ -10,7 +10,7 @@ export class TherapistService {
 
     getTherapists(){
         return this.http.get('http://localhost:3000/api/therapists')
-        .map(res => res.json());
+            .map(res => res.json());
     }
 
     addTherapists(newTherapist){
