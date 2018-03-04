@@ -34,7 +34,7 @@ See the lists of [contributors](https://github.com/hydure/ThoughtPath/graphs/con
 Please read [CONTRIBUTING.md](https://github.com/hydure/ThoughtPath/blob/master/CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
 
 ## Acknowledgements
-A special thanks to Victor at Disrupt the District 2018 for helping us ensure the backend worked properly by teaching us how to use Postman, and also for helping us fix minor connection issues.
+A special thanks to Victor Weiss at Disrupt the District 2018 for helping us ensure the backend worked properly by teaching us how to use Postman, and also for helping us fix minor connection issues.
 
 Thank you to [Traversy Media](https://www.youtube.com/channel/UC29ju8bIPH5as8OGnQzwJyA) for creating helpful tutorials, like [the one we used](https://www.youtube.com/watch?v=PFP0oXNNveg).
 
