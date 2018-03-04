@@ -10,6 +10,9 @@ import { Client } from '../../../Client';
 export class ClientsComponent implements OnInit{ 
     clients: Client[];
     name: string;
+    password: string;
+    age: string;
+    hobby: string;
 
     ngOnInit(){
         this.clientService.getClients()

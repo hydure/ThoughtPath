@@ -11,6 +11,9 @@ import { Therapist } from '../../../Therapist';
 export class TherapistsComponent implements OnInit{ 
     therapists: Therapist[];
     name: string;
+    password: string;
+    age: string;
+    hobby: string;
 
     ngOnInit(){
         this.therapistService.getTherapists()
@@ -23,13 +26,19 @@ export class TherapistsComponent implements OnInit{
     addTherapist(event){
         event.preventDefault();
         var newTherapist = {
-            name:this.name
+            name:this.name,
+            password: this.password,
+            hobby: this.hobby,
+            age: this.age
         }
 
         this.therapistService.addTherapist(newTherapist)
             .subscribe(therapist =>{
                 this.therapists.push(therapist);
                 this.name= '';
+                this.password = '';
+                this.hobby = '';
+                this.age = '';
             });
     }
 
@@ -49,7 +58,7 @@ export class TherapistsComponent implements OnInit{
     updateStatus(therapist){
         var _therapist = {
             _id:therapist._id,
-            name: therapist.name
+            name: therapist.name,
             password: therapist.password,
             hobby: therapist.hobby,
             age: therapist.age
