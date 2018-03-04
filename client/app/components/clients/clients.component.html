@@ -1,8 +1,8 @@
-<form class="well" (submit)="addClient($event)">
-    <div class="form-group">
-        <input type="text" [(ngModel)]="name" name="name" class="form-control" placeholder="Add Client">
-    </div>
-</form>
+<!--<form class="well" (submit)="addClient($event)">-->
+    <!--<div class="form-group">-->
+        <!--<input type="text" [(ngModel)]="name" name="name" class="form-control" placeholder="Add Client">-->
+    <!--</div>-->
+<!--</form>-->
 
 
 <form class="well" (submit)="generateTherapists($event)">
@@ -11,22 +11,37 @@
         <input type="text" [(ngModel)]="age" name="age" class="form-control" placeholder="Your age">
         <input type="text" [(ngModel)]="location" name="location" class="form-control" placeholder="location">
         <input type="text" [(ngModel)]="hobby" name="hobby" class="form-control" placeholder="Your hobby">
+        <input type="text" [(ngModel)]="insurance" name="insurance" class="form-control" placeholder="Your insurance">
+        <input type="text" [(ngModel)]="personality" name="personality" class="form-control" placeholder="Your personality">
+        <input type="text" [(ngModel)]="ailment" name="ailment" class="form-control" placeholder="Your ailment">
     </div>
-    <button (click)="generateTherapist($event)">What up</button>s
+    <button (click)="generateTherapist($event)">Match your therapist</button>
 </form>
 
 
-<div class="client-list">
-    <div *ngFor="let client of clients">
-        <div class="col-md-1">
-            <input  type="checkbox">
-        </div>
-        <div class="col-md-9">
-            {{client.name}}
-        </div>
-        <div class="col-md-10">
-            <input type="button" (click)="deleteClient(client._id)" value="Delete" class="btn btn-danger">
-        </div>
-        <br><br>
-    </div>
+<div *ngIf="therapist_result">
+    You have matched with: {{therapist_result.name}}
+    They are: {{therapist_result.age}}
+    Living in: {{therapist_result.location}}
+    Specializes in: {{therapist_result.specializations}}
+    Likes: {{therapist_result.hobby}}
+    Finds themselves to be: {{therapist_result.personality}}
+    Accepts: {{therapist_result.insurances}}
+
 </div>
+
+
+<!--<div class="client-list">-->
+    <!--<div *ngFor="let client of clients">-->
+        <!--<div class="col-md-1">-->
+            <!--<input  type="checkbox">-->
+        <!--</div>-->
+        <!--<div class="col-md-9">-->
+            <!--{{client.name}}-->
+        <!--</div>-->
+        <!--<div class="col-md-10">-->
+            <!--<input type="button" (click)="deleteClient(client._id)" value="Delete" class="btn btn-danger">-->
+        <!--</div>-->
+        <!--<br><br>-->
+    <!--</div>-->
+<!--</div>-->
