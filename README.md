@@ -13,11 +13,11 @@ Research has shown many therapist-client relationships fail due to personality c
 
 ### Installing
 First clone the repo by typing in  `git clone https://github.com/hydure/thoughtpath`.
-
 Next `cd thoughtpath` and then type `npm install` to install the first set of dependencies.
 Then `cd client` and again type `npm install` to install the second and final set of depencies.
 Now type `npm start` and then stop the server.
 After stopping the server, type `cd ..`.
+Input `bower install bootstrap -g --save` on the command line.
 Finally type `nodemon` to run the server on `localhost:3000`.
 
 ## Configuration

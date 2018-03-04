@@ -27,12 +27,18 @@ var ClientsComponent = (function () {
         var _this = this;
         event.preventDefault();
         var newClient = {
-            name: this.name
+            name: this.name,
+            password: this.password,
+            hobby: this.hobby,
+            age: this.age
         };
         this.clientService.addClient(newClient)
             .subscribe(function (client) {
             _this.clients.push(client);
             _this.name = '';
+            _this.password = '';
+            _this.hobby = '';
+            _this.age = '';
         });
     };
     ClientsComponent.prototype.deleteClient = function (id) {
@@ -50,7 +56,10 @@ var ClientsComponent = (function () {
     ClientsComponent.prototype.updateStatus = function (client) {
         var _client = {
             _id: client._id,
-            name: client.name
+            name: client.name,
+            password: client.password,
+            hobby: client.hobby,
+            age: client.age
         };
         this.clientService.updateStatus(_client).subscribe(function (data) { });
     };
