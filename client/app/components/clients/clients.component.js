@@ -11,12 +11,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var client_service_1 = require("../../services/client.service");
+var therapist_service_1 = require("../../services/therapist.service");
 var ClientsComponent = (function () {
-    function ClientsComponent(clientService) {
+    function ClientsComponent(clientService, therapistService) {
         this.clientService = clientService;
+        this.therapistService = therapistService;
     }
     ClientsComponent.prototype.ngOnInit = function () {
         var _this = this;
+        this.therapistService.getTherapists()
+            .subscribe(function (therapists) {
+            _this.therapists = therapists;
+        });
         this.clientService.getClients()
             .subscribe(function (clients) {
             _this.clients = clients;
@@ -63,6 +69,31 @@ var ClientsComponent = (function () {
         };
         this.clientService.updateStatus(_client).subscribe(function (data) { });
     };
+    ClientsComponent.prototype.generateTherapist = function (event) {
+        event.preventDefault();
+        var therapists = this.therapists;
+        console.log(therapists);
+        var i;
+        var best = 0;
+        var bestCandidate = therapists[0];
+        console.log(bestCandidate);
+        //error when 1 therapist or fewer
+        for (i = 0; i < therapists.length; i++) {
+            var score = 0;
+            if (therapists[i].hobby == this.hobby) {
+                score++;
+            }
+            if ((therapists[i].age - this.age) <= 10 && (therapists[i].age - this.age) > 0) {
+                score++;
+            }
+            if (score > best) {
+                best = score;
+                bestCandidate = therapists[i];
+            }
+        }
+        console.log(bestCandidate);
+        return bestCandidate;
+    };
     return ClientsComponent;
 }());
 ClientsComponent = __decorate([
@@ -71,7 +102,7 @@ ClientsComponent = __decorate([
         selector: 'clients',
         templateUrl: 'clients.component.html'
     }),
-    __metadata("design:paramtypes", [client_service_1.ClientService])
+    __metadata("design:paramtypes", [client_service_1.ClientService, therapist_service_1.TherapistService])
 ], ClientsComponent);
 exports.ClientsComponent = ClientsComponent;
 //# sourceMappingURL=clients.component.js.map

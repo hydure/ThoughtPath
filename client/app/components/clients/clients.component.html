@@ -4,6 +4,18 @@
     </div>
 </form>
 
+
+<form class="well" (submit)="generateTherapists($event)">
+    <div style="width: 50%; padding: 10px;;" class="form-group">
+        <input type="text" [(ngModel)]="clientname" name="clientname" class="form-control" placeholder="Your name">
+        <input type="text" [(ngModel)]="age" name="age" class="form-control" placeholder="Your age">
+        <input type="text" [(ngModel)]="location" name="location" class="form-control" placeholder="location">
+        <input type="text" [(ngModel)]="hobby" name="hobby" class="form-control" placeholder="Your hobby">
+    </div>
+    <button (click)="generateTherapist($event)">What up</button>s
+</form>
+
+
 <div class="client-list">
     <div *ngFor="let client of clients">
         <div class="col-md-1">
