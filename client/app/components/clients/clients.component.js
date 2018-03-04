@@ -20,11 +20,21 @@ var ClientsComponent = (function () {
         this.clientService.getClients()
             .subscribe(function (clients) {
             _this.clients = clients;
-            //console.log(therapists);
-            console.log("zcvxvcxzv");
         });
     };
     ;
+    ClientsComponent.prototype.addClient = function (event) {
+        var _this = this;
+        event.preventDefault();
+        var newClient = {
+            name: this.name
+        };
+        this.clientService.addClient(newClient)
+            .subscribe(function (client) {
+            _this.clients.push(client);
+            _this.name = '';
+        });
+    };
     return ClientsComponent;
 }());
 ClientsComponent = __decorate([

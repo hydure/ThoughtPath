@@ -20,11 +20,21 @@ var TherapistsComponent = (function () {
         this.therapistService.getTherapists()
             .subscribe(function (therapists) {
             _this.therapists = therapists;
-            //console.log(therapists);
-            console.log("asdsdhfsdfds");
         });
     };
     ;
+    TherapistsComponent.prototype.addTherapist = function (event) {
+        var _this = this;
+        event.preventDefault();
+        var newTherapist = {
+            name: this.name
+        };
+        this.therapistService.addTherapist(newTherapist)
+            .subscribe(function (therapist) {
+            _this.therapists.push(therapist);
+            _this.name = '';
+        });
+    };
     return TherapistsComponent;
 }());
 TherapistsComponent = __decorate([

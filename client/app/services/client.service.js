@@ -21,6 +21,12 @@ var ClientService = (function () {
         return this.http.get('http://localhost:3000/api/clients')
             .map(function (res) { return res.json(); });
     };
+    ClientService.prototype.addClient = function (newClient) {
+        var headers = new http_1.Headers();
+        headers.append('Content-Type', 'application/json');
+        return this.http.post('http://localhost:3000/api/clients', JSON.stringify(newClient), { headers: headers })
+            .map(function (res) { return res.json(); });
+    };
     return ClientService;
 }());
 ClientService = __decorate([

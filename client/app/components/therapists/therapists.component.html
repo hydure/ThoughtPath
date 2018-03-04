@@ -1,6 +1,6 @@
-<form class="well">
+<form class="well" (submit)="addTherapist($event)">
     <div class="form-group">
-        <input type="text" class="form-control" placeholder="Add Therapist">
+        <input type="text" [(ngModel)]="name" name="name" class="form-control" placeholder="Add Therapist">
     </div>
 </form>
 

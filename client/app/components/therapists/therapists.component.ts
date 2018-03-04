@@ -10,13 +10,26 @@ import { Therapist } from '../../../Therapist';
 // Gives us access to the Therapists in the html file
 export class TherapistsComponent implements OnInit{ 
     therapists: Therapist[];
+    name: string;
+
     ngOnInit(){
         this.therapistService.getTherapists()
         .subscribe(therapists => {
             this.therapists = therapists;
-            //console.log(therapists);
-            console.log("asdsdhfsdfds");
         });
     };
     constructor(private therapistService:TherapistService){}
+
+    addTherapist(event){
+        event.preventDefault();
+        var newTherapist = {
+            name:this.name
+        }
+
+        this.therapistService.addTherapist(newTherapist)
+            .subscribe(therapist =>{
+                this.therapists.push(therapist);
+                this.name= '';
+            });
+    }
 }

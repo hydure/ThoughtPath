@@ -21,6 +21,12 @@ var TherapistService = (function () {
         return this.http.get('http://localhost:3000/api/therapists')
             .map(function (res) { return res.json(); });
     };
+    TherapistService.prototype.addTherapist = function (newTherapist) {
+        var headers = new http_1.Headers();
+        headers.append('Content-Type', 'application/json');
+        return this.http.post('http://localhost:3000/api/therapists', JSON.stringify(newTherapist), { headers: headers })
+            .map(function (res) { return res.json(); });
+    };
     return TherapistService;
 }());
 TherapistService = __decorate([
