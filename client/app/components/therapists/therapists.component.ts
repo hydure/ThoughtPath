@@ -32,4 +32,26 @@ export class TherapistsComponent implements OnInit{
                 this.name= '';
             });
     }
+
+    deleteTherapist(id){
+        var therapists = this.therapists;
+        this.therapistService.deleteTherapist(id).subscribe(data => {
+            if(data.n == 1){
+                for (var i = 0; i < therapists.length; i++){
+                    if(therapists[i]._id == id){
+                        therapists.splice(i, 1);
+                    }
+                }
+            }
+        });
+    }
+
+    updateStatus(therapist){
+        var _therapist = {
+            _id:therapist._id,
+            name: therapist.name
+        };
+
+        this.therapistService.updateStatus(_therapist).subscribe(data => {});
+    }
 }

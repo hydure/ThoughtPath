@@ -35,6 +35,25 @@ var TherapistsComponent = (function () {
             _this.name = '';
         });
     };
+    TherapistsComponent.prototype.deleteTherapist = function (id) {
+        var therapists = this.therapists;
+        this.therapistService.deleteTherapist(id).subscribe(function (data) {
+            if (data.n == 1) {
+                for (var i = 0; i < therapists.length; i++) {
+                    if (therapists[i]._id == id) {
+                        therapists.splice(i, 1);
+                    }
+                }
+            }
+        });
+    };
+    TherapistsComponent.prototype.updateStatus = function (therapist) {
+        var _therapist = {
+            _id: therapist._id,
+            name: therapist.name
+        };
+        this.therapistService.updateStatus(_therapist).subscribe(function (data) { });
+    };
     return TherapistsComponent;
 }());
 TherapistsComponent = __decorate([

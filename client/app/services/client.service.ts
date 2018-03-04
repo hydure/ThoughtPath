@@ -9,14 +9,26 @@ export class ClientService {
     }
 
     getClients(){
-        return this.http.get('http://localhost:3000/api/clients')
+        return this.http.get('/api/clients')
             .map(res => res.json());
     }
 
     addClient(newClient){
         var headers = new Headers();
         headers.append('Content-Type', 'application/json');
-        return this.http.post('http://localhost:3000/api/clients', JSON.stringify(newClient), {headers: headers})
+        return this.http.post('/api/clients', JSON.stringify(newClient), {headers: headers})
+            .map(res => res.json());
+    }
+
+    deleteClient(id){
+        return this.http.delete('/api/clients/' + id)
+            .map(res => res.json());
+    }
+
+    updateStatus(client){
+        var headers = new Headers();
+        headers.append('Content-Type', 'application/json');
+        return this.http.put('/api/clients/'+client._id, JSON.stringify(client), {headers: headers})
             .map(res => res.json());
     }
 }

@@ -31,4 +31,26 @@ export class ClientsComponent implements OnInit{
                 this.name= '';
             });
     }
+
+    deleteClient(id){
+        var clients = this.clients;
+        this.clientService.deleteClient(id).subscribe(data => {
+            if(data.n == 1){
+                for (var i = 0; i < clients.length; i++){
+                    if(clients[i]._id == id){
+                        clients.splice(i, 1);
+                    }
+                }
+            }
+        });
+    }
+
+    updateStatus(client){
+        var _client = {
+            _id:client._id,
+            name: client.name
+        };
+
+        this.clientService.updateStatus(_client).subscribe(data => {});
+    }
 }

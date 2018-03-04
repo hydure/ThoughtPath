@@ -13,7 +13,8 @@
             {{client.name}}
         </div>
         <div class="col-md-10">
-            <input type="button" value="Delete" class="btn btn-danger">
+            <input type="button" (click)="deleteClient(client._id)" value="Delete" class="btn btn-danger">
         </div>
+        <br><br>
     </div>
 </div>

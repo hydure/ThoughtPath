@@ -35,6 +35,25 @@ var ClientsComponent = (function () {
             _this.name = '';
         });
     };
+    ClientsComponent.prototype.deleteClient = function (id) {
+        var clients = this.clients;
+        this.clientService.deleteClient(id).subscribe(function (data) {
+            if (data.n == 1) {
+                for (var i = 0; i < clients.length; i++) {
+                    if (clients[i]._id == id) {
+                        clients.splice(i, 1);
+                    }
+                }
+            }
+        });
+    };
+    ClientsComponent.prototype.updateStatus = function (client) {
+        var _client = {
+            _id: client._id,
+            name: client.name
+        };
+        this.clientService.updateStatus(_client).subscribe(function (data) { });
+    };
     return ClientsComponent;
 }());
 ClientsComponent = __decorate([

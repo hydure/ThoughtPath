@@ -18,13 +18,23 @@ var ClientService = (function () {
         console.log('Task Service Initialized...');
     }
     ClientService.prototype.getClients = function () {
-        return this.http.get('http://localhost:3000/api/clients')
+        return this.http.get('/api/clients')
             .map(function (res) { return res.json(); });
     };
     ClientService.prototype.addClient = function (newClient) {
         var headers = new http_1.Headers();
         headers.append('Content-Type', 'application/json');
-        return this.http.post('http://localhost:3000/api/clients', JSON.stringify(newClient), { headers: headers })
+        return this.http.post('/api/clients', JSON.stringify(newClient), { headers: headers })
+            .map(function (res) { return res.json(); });
+    };
+    ClientService.prototype.deleteClient = function (id) {
+        return this.http.delete('/api/clients/' + id)
+            .map(function (res) { return res.json(); });
+    };
+    ClientService.prototype.updateStatus = function (client) {
+        var headers = new http_1.Headers();
+        headers.append('Content-Type', 'application/json');
+        return this.http.put('/api/clients/' + client._id, JSON.stringify(client), { headers: headers })
             .map(function (res) { return res.json(); });
     };
     return ClientService;

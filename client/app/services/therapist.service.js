@@ -18,13 +18,23 @@ var TherapistService = (function () {
         console.log('Task Service Initialized...');
     }
     TherapistService.prototype.getTherapists = function () {
-        return this.http.get('http://localhost:3000/api/therapists')
+        return this.http.get('/api/therapists')
             .map(function (res) { return res.json(); });
     };
     TherapistService.prototype.addTherapist = function (newTherapist) {
         var headers = new http_1.Headers();
         headers.append('Content-Type', 'application/json');
-        return this.http.post('http://localhost:3000/api/therapists', JSON.stringify(newTherapist), { headers: headers })
+        return this.http.post('/api/therapists', JSON.stringify(newTherapist), { headers: headers })
+            .map(function (res) { return res.json(); });
+    };
+    TherapistService.prototype.deleteTherapist = function (id) {
+        return this.http.delete('/api/therapists/' + id)
+            .map(function (res) { return res.json(); });
+    };
+    TherapistService.prototype.updateStatus = function (therapist) {
+        var headers = new http_1.Headers();
+        headers.append('Content-Type', 'application/json');
+        return this.http.put('/api/therapists/' + therapist._id, JSON.stringify(therapist), { headers: headers })
             .map(function (res) { return res.json(); });
     };
     return TherapistService;
