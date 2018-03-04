@@ -5,13 +5,15 @@
 </form>
 
 <div class="therapist-list">
-    <div class="col-md-1">
-        <input  type="checkbox">
-    </div>
-    <div class="col-md-7">
-        Therapist
-    </div>
-    <div class="col-md-4">
-        <input type="button" value="Delete" class="btn btn-danger">
+    <div *ngFor="let therapist of therapists">
+        <div class="col-md-1">
+            <input  type="checkbox">
+        </div>
+        <div class="col-md-7">
+            {{therapist.name}}
+        </div>
+        <div class="col-md-4">
+            <input type="button" value="Delete" class="btn btn-danger">
+        </div>
     </div>
 </div>
