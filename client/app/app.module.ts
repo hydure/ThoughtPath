@@ -6,11 +6,12 @@ import { TherapistsComponent } from './components/therapists/therapists.componen
 import { HttpModule } from '@angular/http';
 import {FormsModule } from '@angular/forms';
 import { LoginComponent } from './components/login/logins.component';
+import { ClientFormComponent } from './components/clientform/clientform.component';
 
 
 @NgModule({
   imports:      [ BrowserModule, HttpModule, FormsModule ],
-  declarations: [ AppComponent, TherapistsComponent, ClientsComponent, LoginComponent ],
+  declarations: [ AppComponent, TherapistsComponent, ClientsComponent, LoginComponent, ClientFormComponent ],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }
