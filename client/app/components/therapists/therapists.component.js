@@ -27,12 +27,18 @@ var TherapistsComponent = (function () {
         var _this = this;
         event.preventDefault();
         var newTherapist = {
-            name: this.name
+            name: this.name,
+            password: this.password,
+            hobby: this.hobby,
+            age: this.age
         };
         this.therapistService.addTherapist(newTherapist)
             .subscribe(function (therapist) {
             _this.therapists.push(therapist);
             _this.name = '';
+            _this.password = '';
+            _this.hobby = '';
+            _this.age = '';
         });
     };
     TherapistsComponent.prototype.deleteTherapist = function (id) {
@@ -50,7 +56,10 @@ var TherapistsComponent = (function () {
     TherapistsComponent.prototype.updateStatus = function (therapist) {
         var _therapist = {
             _id: therapist._id,
-            name: therapist.name
+            name: therapist.name,
+            password: therapist.password,
+            hobby: therapist.hobby,
+            age: therapist.age
         };
         this.therapistService.updateStatus(_therapist).subscribe(function (data) { });
     };

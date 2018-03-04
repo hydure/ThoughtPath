@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { TherapistService } from './services/therapist.service';
-import {ClientService } from './services/client.service'
+import { ClientService } from './services/client.service'
 @Component({
   moduleId: module.id,
   selector: 'my-app',

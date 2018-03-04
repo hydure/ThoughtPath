@@ -5,7 +5,7 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class ClientService {
     constructor(private http:Http){
-        console.log('Task Service Initialized...');
+        console.log('Client Service Initialized...');
     }
 
     getClients(){

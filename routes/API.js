@@ -91,6 +91,9 @@ router.put('/therapists/:id', function(req, res, next) {
     // Copy form data to update therapist JSON object attributes
     if(therapist.name){
         updateTherapist.name = therapist.name
+        updateTherapist.password = therapist.password;
+        updateTherapist.hobby = therapist.hobby;
+        updateTherapist.age = therapist.age;
     }
 
     // Check to see if therapist is actually updated
@@ -157,7 +160,7 @@ router.post('/clients', function(req, res, next){
         });
     }
     else {
-        db.tasks.save(client, function(err, client){
+        db.clients.save(client, function(err, client){
             if(err){
                 res.send(err);
             }
@@ -188,6 +191,9 @@ router.put('/client/:id', function(req, res, next) {
     // Copy form data to update client JSON object attributes
     if(client.name){
         updateClient.name = client.name
+        updateClient.password = therapist.password;
+        updateClient.hobby = therapist.hobby;
+        updateClient.age = therapist.age;
     }
 
     // Check to see if clent is actually updated
