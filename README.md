@@ -1,4 +1,4 @@
-# Thought Path: "me_irl 4u_irl"
+# Thought Path
 
 This repo contains a mental health website interface focused on matching patients with the right therapist, and vice versa.  We used the MEAN stack design to program the interface.
 
